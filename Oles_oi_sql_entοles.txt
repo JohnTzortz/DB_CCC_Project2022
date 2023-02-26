@@ -1,0 +1,320 @@
+"CREATE DATABASE cccDB"
+-> Γραμμη 199: Δημιουργια καινουργιας βασης δεδομενων με ονομα cccDB.
+
+"CREATE TABLE users (\n" + "accountID INT(30) PRIMARY KEY,\n" + "username VARCHAR (30) NOT NULL\n" + ")"
+-> Γραμμη 204: Δημιουργια καινουργιου πινακα με ονομα users και στηλες accountID(int), username(char). Το πρωτευον κλειδι ειναι το accountID.
+
+"CREATE TABLE consumers(\n" + "accountID INT(30) NOT NULL PRIMARY KEY,\n" + "consumer_name VARCHAR (30) NOT NULL,\n" + "debt FLOAT(10),\n" + "credit_limit FLOAT(10),\n" + "exp_date VARCHAR(20),\n" + "balance FLOAT(10)\n" + ")"
+-> Γραμμη 205: Δημιουργια κaινουργιου πινακα με ονομα consumers και στηλες accountID(int), consumer_name(char), debt(float), credit_limit(float), exp_date(char), balance(float). Το πρωτευον κλειδι ειναι το accountID.
+ 
+"CREATE TABLE merchants (\n" + "accountID INT(30) NOT NULL PRIMARY KEY,\n" + "merchant_name VARCHAR (30) NOT NULL,\n" + "commission FLOAT(10),\n" + "debt FLOAT(10),\n" + "profit FLOAT(10)\n" + ")"
+-> Γραμμη 206: Δημιουργια καινουργιου πινακα με ονομα merchants και στηλες accountID(int), merchant_name(char), commission(float), debt(float), profit(float). Το πρωτευον κλειδι ειναι το accountID.
+ 
+"CREATE TABLE corporates (\n" + "accountID INT (30) NOT NULL PRIMARY KEY\n" + ")"
+-> Γραμμη 207: Δημιουργια καινουργιου πινακα με ονομα corporates και στηλη accountID(int). Το πρωτευον κλειδι ειναι το accountID.
+
+"CREATE TABLE employees (\n" + "accountID INT (30) NOT NULL,\n" + "emp_id INT (30) NOT NULL PRIMARY KEY,\n" + "emp_name VARCHAR (30) NOT NULL\n" + ")"
+-> Γραμμη 208: Δημιουργια καινουργιου πινακα με ονομα employees και στηλες accountID(int), emp_id(int), emp_name(char). Το πρωτευον κλειδι ειναι το emp_id.
+
+"CREATE TABLE emp_transactions (\n" + "transID INT (30) NOT NULL PRIMARY KEY,\n" + "emp_id INT (30) NOT NULL PRIMARY KEY\n)"
+-> Γραμμη 209: Δημιουργια καινουργιου πινακα με ονομα emp_transactions και στηλες transID(int), emp_id(int). Το πρωτευον κλειδι ειναι το transID και το emp_id.
+ 
+"CREATE TABLE transactions (\n" + "transID INT(30) PRIMARY KEY,\n" + "consumer_acc_id INT(30) NOT NULL,\n" + "consumer_name VARCHAR (30) NOT NULL,\n" + "merchant_acc_id INT(30) NOT NULL,\n" + "merchant_name VARCHAR (30) NOT NULL,\n" + "amount FLOAT(10),\n" + "date VARCHAR(20),\n" + "transType INT(10)\n" + ")"
+-> Γραμμη 210: Δημιουργια καινουργιου πινακα με ονομα transactions και στηλες transID(int), consumer_acc_id(int), consumer_name(char), merchant_acc_id(int), merchant_name(char), amount(float), date(char), transType(int). Το πρωτευον κλειδι ειναι το transID.
+ 
+"INSERT INTO consumers VALUES(0, 'Jumbo', 60000,100000,'2030/01/23 16:44:40',40000)"
+-> Γραμμη 211: Εισαγωγη καινουργιας πλειαδας στον πινακα consumers με στοιχεια: accountID = 0, consumer_name = Jumbo, debt = 60000, credit_limit = 100000, exp_date = 2030/01/23 16:44:40, balance = 40000.
+ 
+"INSERT INTO consumers VALUES(1, 'Panagiotis Panagiotidis', 1000,500,'2025/08/23 16:44:40',500)"
+-> Γραμμη 212: Εισαγωγη καινουργιας πλειαδας στον πινακα consumers με στοιχεια: accountID = 1, consumer_name = Panagiotis Panagiotidis, debt = 1000, credit_limit = 500, exp_date = 2025/08/23 16:44:40, balance = 500.
+ 
+"INSERT INTO consumers VALUES(2, 'Eleutherios Eleutheriou', 0,0,'2025/10/23 16:44:40',0)"
+-> Γραμμη 213: Εισαγωγη καινουργιας πλειαδας στον πινακα consumers με στοιχεια: accountID = 2, consumer_name = Eleutherios Eleutheriou, debt = 0, credit_limit = 0, exp_date = 2025/10/23 16:44:40, balance = 0.
+
+"INSERT INTO consumers VALUES(3, 'Nerotsoulithres', 4000,5000,'2030/01/23 16:44:40',1000)"
+-> Γραμμη 214: Εισαγωγη καινουργιας πλειαδας στον πινακα consumers με στοιχεια: accountID = 3, consumer_name = Nerotsoulithres, debt = 4000, credit_limit = 5000, exp_date = 2030/01/23 16:44:40, balance = 1000.
+ 
+"INSERT INTO consumers VALUES(4, 'Kritikos', 15000,50000,'2030/01/23 16:44:40',35000)" 
+-> Γραμμη 215: Εισαγωγη καινουργιας πλειαδας στον πινακα consumers με στοιχεια: accountID = 4, consumer_name = Kritikos, debt = 15000, credit_limit = 50000, exp_date = 2030/01/23 16:44:40, balance = 35000.
+ 
+"INSERT INTO consumers VALUES(5, 'Geusinous', 1000,5000,'2030/01/23 16:44:40',4000)"
+-> Γραμμη 216: Εισαγωγη καινουργιας πλειαδας στον πινακα consumers με στοιχεια: accountID = 5, consumer_name = Geusinous, debt = 1000, credit_limit = 5000, exp_date = '2030/01/23 16:44:40, balance = 4000.
+ 
+"INSERT INTO consumers VALUES(6, 'Fournos', 10,100,'2030/01/23 16:44:40',90)"
+-> Γραμμη 217: Εισαγωγη καινουργιας πλειαδας στον πινακα consumers με στοιχεια: accountID = 6, consumer_name = Fournos, debt = 10, credit_limit = 100, exp_date = '2030/01/23 16:44:40, balance = 90.
+ 
+"INSERT INTO merchants VALUES(7, 'Tasos', 50,100,50)"
+-> Γραμμη 218: Εισαγωγη καινουργιας πλειαδας στον πινακα merchants με στοιχεια: accountID = 7, merchant_name = Tasos, commission = 50, debt = 100, profit = 50.
+ 
+"INSERT INTO merchants VALUES(8, 'Boula', 0,1000,1000)"
+-> Γραμμη 219: Εισαγωγη καινουργιας πλειαδας στον πινακα merchants με στοιχεια: accountID = 8, merchant_name = Boula, commission = 0, debt = 1000, profit = 1000.
+ 
+"INSERT INTO merchants VALUES(9, 'Panagiota', 0,2000,2000)"
+-> Γραμμη 220: Εισαγωγη καινουργιας πλειαδας στον πινακα merchants με στοιχεια: accountID = 9, merchant_name = Panagiota, commission = 0, debt = 2000, profit = 2000.
+ 
+"INSERT INTO merchants VALUES(10, 'Marialena', 20,5000,4000)"
+-> Γραμμη 221: Εισαγωγη καινουργιας πλειαδας στον πινακα merchants με στοιχεια: accountID = 10, merchant_name = Marialena, commission = 20, debt = 5000, profit = 4000.
+ 
+"INSERT INTO merchants VALUES(11, 'Xristoforos', 10,0,10)"
+-> Γραμμη 222: Εισαγωγη καινουργιας πλειαδας στον πινακα merchants με στοιχεια: accountID = 11, merchant_name = Xristoforos, commission = 10, debt = 0, profit = 10.
+ 
+"INSERT INTO corporates VALUES(0)"
+-> Γραμμη 223: Εισαγωγη καινουργιας πλειαδας στον πινακα corporates με στοιχεια: accountID = 0.
+ 
+"INSERT INTO corporates VALUES(3)"
+-> Γραμμη 224: Εισαγωγη καινουργιας πλειαδας στον πινακα corporates με στοιχεια: accountID = 3.
+ 
+"INSERT INTO corporates VALUES(4)"
+-> Γραμμη 225: Εισαγωγη καινουργιας πλειαδας στον πινακα corporates με στοιχεια: accountID = 4.
+ 
+"INSERT INTO corporates VALUES(5)"
+-> Γραμμη 226: Εισαγωγη καινουργιας πλειαδας στον πινακα corporates με στοιχεια: accountID = 5.
+ 
+"INSERT INTO corporates VALUES(6)"
+-> Γραμμη 227: Εισαγωγη καινουργιας πλειαδας στον πινακα corporates με στοιχεια: accountID = 6.
+ 
+"INSERT INTO employees VALUES(0, 0, 'Giannakis')"
+-> Γραμμη 228: Εισαγωγη καινουργιας πλειαδας στον πινακα employees με στοιχεια: accountID = 0, emp_id = 0, emp_name = Giannakis.
+ 
+"INSERT INTO employees VALUES(3, 1, 'Andreas')"
+-> Γραμμη 229: Εισαγωγη καινουργιας πλειαδας στον πινακα employees με στοιχεια: accountID = 3, emp_id = 1, emp_name = Andreas.
+ 
+"INSERT INTO employees VALUES(4, 2, 'Toula')"
+-> Γραμμη 230: Εισαγωγη καινουργιας πλειαδας στον πινακα employees με στοιχεια: accountID = 4, emp_id = 2, emp_name = Toula.
+ 
+"INSERT INTO employees VALUES(5, 3, 'Maria')"
+-> Γραμμη 231: Εισαγωγη καινουργιας πλειαδας στον πινακα employees με στοιχεια: accountID = 5, emp_id = 3, emp_name = Maria.
+ 
+"INSERT INTO employees VALUES(6, 4, 'Tania')"
+-> Γραμμη 232: Εισαγωγη καινουργιας πλειαδας στον πινακα employees με στοιχεια: accountID = 6, emp_id = 4, emp_name = Tania.
+ 
+"INSERT INTO users VALUES(0,'Jumbo')"
+-> Γραμμη 233: Εισαγωγη καινουργιας πλειαδας στον πινακα users με στοιχεια: accountID = 0, username = Jumbo.
+ 
+"INSERT INTO users VALUES(1,'Panagiotis Panagiotidis')"
+-> Γραμμη 234: Εισαγωγη καινουργιας πλειαδας στον πινακα users με στοιχεια: accountID = 1, username = anagiotis Panagiotidis.
+ 
+"INSERT INTO users VALUES(2,'Eleutherios Eleutheriou')"
+-> Γραμμη 235: Εισαγωγη καινουργιας πλειαδας στον πινακα users με στοιχεια: accountID = 2, username = Eleutherios Eleutheriou.
+ 
+"INSERT INTO users VALUES(3,'Nerotsoulithres')"
+-> Γραμμη 236: Εισαγωγη καινουργιας πλειαδας στον πινακα users με στοιχεια: accountID = 3, username = Nerotsoulithres.
+ 
+"INSERT INTO users VALUES(4,'Kritikos')"
+-> Γραμμη 237: Εισαγωγη καινουργιας πλειαδας στον πινακα users με στοιχεια: accountID = 4, username = Kritikos.
+ 
+"INSERT INTO users VALUES(5,'Geusinous')"
+-> Γραμμη 238: Εισαγωγη καινουργιας πλειαδας στον πινακα users με στοιχεια: accountID = 5, username = Geusinous.
+ 
+"INSERT INTO users VALUES(6,'Fournos')"
+-> Γραμμη 239: Εισαγωγη καινουργιας πλειαδας στον πινακα users με στοιχεια: accountID = 6, username = Fournos.
+ 
+"INSERT INTO users VALUES(7,'Tasos')"
+-> Γραμμη 240: Εισαγωγη καινουργιας πλειαδας στον πινακα users με στοιχεια: accountID = 7, username = Tasos.
+ 
+"INSERT INTO users VALUES(8,'Boula')"
+-> Γραμμη 241: Εισαγωγη καινουργιας πλειαδας στον πινακα users με στοιχεια: accountID = 8, username = Boula.
+ 
+"INSERT INTO users VALUES(9,'Panagiota')"
+-> Γραμμη 242: Εισαγωγη καινουργιας πλειαδας στον πινακα users με στοιχεια: accountID = 9, username = Panagiota.
+ 
+"INSERT INTO users VALUES(10,'Marialena')"
+-> Γραμμη 243: Εισαγωγη καινουργιας πλειαδας στον πινακα users με στοιχεια: accountID = 10, username = Marialena.
+ 
+"INSERT INTO users VALUES(11,'Xristoforos')"
+-> Γραμμη 244: Εισαγωγη καινουργιας πλειαδας στον πινακα users με στοιχεια: accountID = 11, username = Xristoforos.
+ 
+"INSERT INTO transactions VALUES(0,1,'Panagiotis Panagiotidis',11,'Xristoforos',100, '2022/01/20 16:44:40',1)"
+-> Γραμμη 245: Εισαγωγη καινουργιας πλειαδας στον πινακα transactions με στοιχεια: transID = 0, consumer_acc_id = 1, consumer_name = Panagiotis Panagiotidis, merchant_acc_id = 11, merchant_name = Xristoforos, amount = 100, date = 2022/01/20 16:44:40, transType = 1.
+
+"INSERT INTO transactions VALUES(1,0,'Jumbo',10,'Marialena',1000, '2022/01/21 16:44:40',1)"
+-> Γραμμη 246: Εισαγωγη καινουργιας πλειαδας στον πινακα transactions με στοιχεια: transID = 1, consumer_acc_id = 0, consumer_name = Jumbo, merchant_acc_id = 10, merchant_name = Marialena, amount = 1000, date = 2022/01/21 16:44:40, transType = 1.
+
+"INSERT INTO emp_transactions VALUES(1,0)"
+ -> Γραμμη 247: Εισαγωγη καινουργιας πλειαδας στον πινακα emp_transactions με στοιχεια: transID = 1, emp_id = 0.
+ 
+"INSERT INTO transactions VALUES(2,1,'Panagiotis Panagiotidis',11,'Xristoforos',100, '2022/01/22 16:44:40',0)"
+-> Γραμμη 248: Εισαγωγη καινουργιας πλειαδας στον πινακα transactions με στοιχεια: transID = 2, consumer_acc_id = 1, consumer_name = Panagiotis Panagiotidis, merchant_acc_id = 11, merchant_name = Xristoforos, amount = 100, date = 2022/01/22 16:44:40, transType = 0.
+ 
+"INSERT INTO transactions VALUES(3,4,'Kritikos',8,'Boula', 2000, '2022/01/23 16:44:40',1)"
+-> Γραμμη 249: Εισαγωγη καινουργιας πλειαδας στον πινακα transactions με στοιχεια: transID = 3, consumer_acc_id = 4, consumer_name = Kritikos, merchant_acc_id = 8, merchant_name = Boula, amount = 2000, date = 2022/01/23 16:44:40, transType = 1.
+ 
+"INSERT INTO emp_transactions VALUES(3,2)"
+ -> Γραμμη 250: Εισαγωγη καινουργιας πλειαδας στον πινακα emp_transactions με στοιχεια: transID = 3, emp_id = 2.
+ 
+"INSERT INTO transactions VALUES(4,6,'Fournos',7,'Tasos',70, '2022/01/24 16:44:40',1)"
+-> Γραμμη 251: Εισαγωγη καινουργιας πλειαδας στον πινακα transactions με στοιχεια: transID = 4, consumer_acc_id = 6, consumer_name = Fournos, merchant_acc_id = 7, merchant_name = Tasos, amount = 70, date = 2022/01/24 16:44:40, transType = 1.
+ 
+"INSERT INTO emp_transactions VALUES(4,4)"
+ -> Γραμμη 252: Εισαγωγη καινουργιας πλειαδας στον πινακα emp_transactions με στοιχεια: transID = 4, emp_id = 4.
+ 
+"INSERT INTO transactions VALUES(5,3,'Nerotsoulithres',9,'Panagiota',500, '2022/01/25 16:44:40',1)"
+-> Γραμμη 253: Εισαγωγη καινουργιας πλειαδας στον πινακα transactions με στοιχεια: transID = 5, consumer_acc_id = 3, consumer_name = Nerotsoulithres, merchant_acc_id = 9, merchant_name = Panagiota, amount = 500, date = 2022/01/25 16:44:400, transType = 1.
+ 
+"INSERT INTO emp_transactions VALUES(5,1)"
+ -> Γραμμη 254: Εισαγωγη καινουργιας πλειαδας στον πινακα emp_transactions με στοιχεια: transID = 5, emp_id = 1.
+ 
+"INSERT INTO transactions VALUES(6,5,'Geusinous',7,'Tasos',300, '2022/01/26 16:44:40',1)"
+-> Γραμμη 255: Εισαγωγη καινουργιας πλειαδας στον πινακα transactions με στοιχεια: transID = 6, consumer_acc_id = 5, consumer_name = Geusinous, merchant_acc_id = 7, merchant_name = Tasos, amount = 300, date = 2022/01/26 16:44:40, transType = 1.
+ 
+"INSERT INTO emp_transactions VALUES(6,3)"
+-> Γραμμη 256: Εισαγωγη καινουργιας πλειαδας στον πινακα emp_transactions με στοιχεια: transID = 6, emp_id = 3.
+ 
+"SELECT MAX(accountID) FROM users"
+-> Γραμμη 267: Επιλογη μεγιστης τιμης στηλης accountID απο τον πινακα users.
+
+"SELECT MAX(transID) FROM transactions"
+-> Γραμμη 272: Επιλογη μεγιστης τιμης στηλης transID απο τον πινακα transactions.
+ 
+"SELECT MAX(emp_id) FROM employees"
+-> Γραμμη 277: Επιλογη μεγιστης τιμης στηλης emp_id απο τον πινακα employees.
+
+"SELECT consumer_name FROM consumers WHERE debt=0"
+-> Γραμμη 351: Επιλογη ολων των τιμων στηλης consumer_name απο τον πινακα consumers που πληρουν το κριτηριο debt=0.
+
+"SELECT consumer_name FROM consumers WHERE debt>0"
+-> Γραμμη 364: Επιλογη ολων των τιμων στηλης consumer_name απο τον πινακα consumers που πληρουν το κριτηριο debt>0.
+
+"SELECT merchant_name, MAX(profit) FROM merchants"
+-> Γραμμη 388: Επιλογη ολων των τιμων στηλης merchant_name και την μεγιστη τιμη της στηλης profit απο τον πινακα merchants.
+
+"SELECT merchant_name, profit FROM merchants where profit = ?"
+-> Γραμμη 390: Επιλογη ολων των τιμων στηλης consumer_name και profit απο τον πινακα merchants που πληρουν το κριτηριο profit = MAX(profit).
+
+"INSERT INTO merchants VALUES(?, ?, ?, ?, ?)"
+-> Γραμμη 585: Εισαγωγη πλειαδας στον πινκα merchants με τιμες: account_id, name_clientName, commission, debt, balance_profit.
+
+"INSERT INTO consumers VALUES(?, ?, ?, ?, ?, ?)"
+-> Γραμμη 594: Εισαγωγη πλειαδας στον πινκα consumers με τιμες: account_id, name_clientName, debt, creditLimit, expire_date, balance_profit.
+
+"INSERT INTO corporates VALUES(?)"
+-> Γραμμη 604: Εισαγωγη πλειαδας στον πινκα corporates με τιμη account_id.
+
+"INSERT INTO employees VALUES(?, ?, ?)"
+-> Γραμμη 609: Εισαγωγη πλειαδας στον πινκα corporates με τιμες: account_id, employee_id, employee_name_str.
+
+"INSERT INTO users VALUES(?, ?)"
+-> Γραμμη 623: Εισαγωγη πλειαδας στον πινκα users με τιμες: account_id, name_clientName.
+
+"DROP DATABASE cccdb"
+-> Γραμμη 648: Διαγραφη της βασης δεδομενων με ονομα cccdb.
+
+"SELECT * FROM users WHERE username=? and accountID = ?"
+-> Γραμμη 688: Επιλογη ολων των στηλων του πινακα users στις οποιες ισχυουν οι συνθηκες: username = name, accountID = id.
+
+"DELETE FROM users WHERE accountID=?"
+-> Γραμμη 697: Διαγραφη ολων των στηλων του πινακα users στις οποιες ισχυει η συνθηκη accountID = id.
+
+"SELECT * FROM merchants WHERE accountID=?"
+-> Γραμμη 703: Επιλογη ολων των στηλων του πινακα merchants για τις οποιες ισχυει η συνθηκη accountID = id.
+
+"DELETE FROM merchants WHERE accountID=?"
+-> Γραμμη 709: Διαγραφη ολων των στηλων του πινακα merchants στις οποιες ισχυει η συνθηκη accountID = id.
+
+"SELECT * FROM consumers WHERE accountID=?"
+-> Γραμμη 716: Επιλογη ολων των στηλων του πινακα consumers για τις οποιες ισχυει η συνθηκη accountID = id.
+
+"DELETE FROM consumers WHERE accountID=?"
+-> Γραμμη 722: Διαγραφη ολων των στηλων του πινακα consumers στις οποιες ισχυει η συνθηκη accountID = id.
+
+"SELECT * FROM corporates WHERE accountID=?"
+-> Γραμμη 729: Επιλογη ολων των στηλων του πινακα corporates για τις οποιες ισχυει η συνθηκη accountID = id.
+
+"DELETE FROM corporates WHERE accountID=?"
+-> Γραμμη 735: Διαγραφη ολων των στηλων του πινακα corporates στις οποιες ισχυει η συνθηκη accountID = id.
+
+"SELECT * FROM employees WHERE accountID=?"
+-> Γραμμη 742: Επιλογη ολων των στηλων του πινακα employees για τις οποιες ισχυει η συνθηκη accountID = id.
+
+"DELETE FROM employees WHERE accountID=?"
+-> Γραμμη 748: Διαγραφη ολων των στηλων του πινακα employees στις οποιες ισχυει η συνθηκη accountID = id.
+
+"SELECT * FROM consumers WHERE accountID=? AND consumer_name=?"
+-> Γραμμη 869: Επιλογη ολων των στηλων του πινακα consumers για τις οποιες ισχυουν οι συνθηκες: accountID = client_id, consumer_name = client_name.
+
+"SELECT * FROM merchants WHERE accountID=? AND merchant_name=?"
+-> Γραμμη 894: Επιλογη ολων των στηλων του πινακα merchants για τις οποιες ισχυουν οι συνθηκες: accountID = dealer_id, consumer_name = dealer_name.
+
+"SELECT * FROM employees WHERE accountID=? AND emp_id=? AND emp_name=?"
+-> Γραμμη 931: Επιλογη ολων των στηλων του πινακα employees για τις οποιες ισχυουν οι συνθηκες: accountID = client_id, emp_id = emp_id, emp_name = emp_name.
+
+"INSERT INTO emp_transactions VALUES(?,?)"
+-> Γραμμη 943: Εισαγωγη στον πινακα emp_transactions μια πλειαδα με τιμες: transID + 1, emp_id.
+
+"UPDATE consumers SET balance = ?, credit_limit = ?, debt = ? WHERE accountID = ?"
+-> Γραμμη 956: Ανανεωση τιμων balance = balance, credit_limit = credlim, debt = debt, σε ολες τις στηλες του πινακα consumers με την προυποθεση οτι το account_id = client_id.
+
+"UPDATE merchants SET profit = ? WHERE accountID = ?"
+-> Γραμμη 968: Ανανεωση τιμης profit = profit, σε ολες τις στηλες του πινακα merchants με την προυποθεση οτι το account_id = dealer_id.
+
+"INSERT INTO transactions VALUES (?, ?, ?, ?, ?, ?, ?, 1)"
+-> Γραμμη 978: Εισαγωγη στον πινακα transactions μια πλειαδα με τιμες: transID, client_id, client_name, dealer_id, dealer_name, amount, curr_date.
+
+"SELECT * FROM users WHERE username=? and accountID = ?"
+-> Γραμμη 1059: Επιλογη ολων των στηλων του πινακα users στις οποιες ισχυουν οι συνθηκες: username = name, accountID = id.
+
+"SELECT * FROM transactions WHERE consumer_acc_id = ? and transID = ?"
+-> Γραμμη 1067: Επιλογη ολων των στηλων του πινακα transactions στις οποιες ισχυουν οι συνθηκες: consumer_acc_id = id, transID = trans_id.
+
+"SELECT * FROM merchants WHERE accountID = ?"
+-> Γραμμη 1082: Επιλογη ολων των στηλων του πινακα merchants στις οποιες ισχυει η συνθηκη accountID = merchant_id.
+
+"UPDATE merchants SET profit = ?, debt = ? WHERE accountID = ?"
+-> Γραμμη 1102: Ανανεωση τιμων profit = profit, debt = debt, σε ολες τις στηλες του πινακα merchants με την προυποθεση οτι το account_id = merchant_id.
+
+"UPDATE merchants SET profit = ? WHERE accountID = ?"
+-> Γραμμη 1110: Ανανεωση τιμης profit = profit, σε ολες τις στηλες του πινακα merchants με την προυποθεση οτι το account_id = merchant_id.
+
+"SELECT * FROM consumers WHERE accountID = ?"
+-> Γραμμη 1118: Επιλογη ολων των στηλων του πινακα consumers στις οποιες ισχυει η συνθηκη accountID = id.
+
+"UPDATE consumers SET credit_limit = ? WHERE accountID = ?"
+-> Γραμμη 1130: Ανανεωση τιμης credit_limit = credit_limit, σε ολες τις στηλες του πινακα consumers με την προυποθεση οτι το account_id = merchant_id.
+
+"UPDATE consumers SET balance = ? WHERE accountID = ?"
+-> Γραμμη 1136: Ανανεωση τιμης balance = (credit_limit - dept), σε ολες τις στηλες του πινακα consumers με την προυποθεση οτι το account_id = merchant_id.
+
+"INSERT INTO transactions VALUES (?, ?, ?, ?, ?, ?, ?, 0)"
+-> Γραμμη 1143: Εισαγωγη στον πινακα transactions μια πλειαδα με τιμες: transID, id, consumer_name, merchant_id, merchant_name, trans_amount, new_date.
+
+"SELECT * FROM users WHERE accountID=? and username = ?"
+-> Γραμμη 1206: Επιλογη ολων των στηλων του πινακα users στις οποιες ισχυουν οι συνθηκες: username = name, accountID = id.
+
+"SELECT * FROM merchants WHERE accountID=?"
+-> Γραμμη 1213: Επιλογη ολων των στηλων του πινακα merchants στις οποιες ισχυει η συνθηκη accountID = id.
+
+"UPDATE merchants SET debt = ?, profit = ? WHERE accountID = ?"
+-> Γραμμη 1230: Ανανεωση τιμων debt = new_dept, profit = profit, σε ολες τις στηλες του πινακα merchants με την προυποθεση οτι το account_id = id.
+
+"UPDATE merchants SET debt = ? WHERE accountID = ?"
+-> Γραμμη 1237: Ανανεωση τιμης debt = new_dept, σε ολες τις στηλες του πινακα merchants με την προυποθεση οτι το account_id = id.
+
+"SELECT * FROM consumers WHERE accountID=?"
+-> Γραμμη 1245: Επιλογη ολων των στηλων του πινακα consumers στις οποιες ισχυει η συνθηκη accountID = id.
+
+"UPDATE consumers SET debt = ?, credit_limit = ? WHERE accountID = ?"
+-> Γραμμη 1264: Ανανεωση τιμων debt = old_dept, credit_limit = credit_limit, σε ολες τις στηλες του πινακα consumers με την προυποθεση οτι το account_id = id.
+
+"UPDATE consumers SET debt = ? WHERE accountID = ?"
+-> Γραμμη 1271: Ανανεωση τιμης debt = old_dept σε ολες τις στηλες του πινακα consumers με την προυποθεση οτι το account_id = id.
+
+"UPDATE consumers SET balance = ? WHERE accountID = ?"
+-> Γραμμη 1278: Ανανεωση τιμης balance = (credit_limit - old_dept) σε ολες τις στηλες του πινακα consumers με την προυποθεση οτι το account_id = id.
+
+"SELECT * FROM transactions"
+-> Γραμμη 1423: Επιλογη ολων των στηλων του πινακα transactions.
+
+"SELECT * FROM emp_transactions"
+-> Γραμμη 1424: Επιλογη ολων των στηλων του πινακα emp_transactions.
+
+"SELECT * FROM employees"
+-> Γραμμη 1425: Επιλογη ολων των στηλων του πινακα employees.
+
+"SELECT * FROM emp_transactions WHERE emp_id=" + emp_id + " AND transID=" + transid
+-> Γραμμη 1451: Επιλογη ολων των στηλων του πινακα emp_transactions στις οποιες ισχυουν οι συνθηκες emp_id = emp_id, transID = transid.
+
+"SELECT * FROM employees WHERE emp_id=" + emp_id + " AND emp_name='" + emp_name + "'"
+-> Γραμμη 1452: Επιλογη ολων των στηλων του πινακα employees στις οποιες ισχυουν οι συνθηκες emp_id = emp_id, emp_name = emp_name.
+
+"INSERT INTO employees VALUES(?, ?, ?)"
+-> Γραμμη 1642: Εισαγωγη στον πινακα employees μια πλειαδα με τιμες: (account_id - 1), employee_id, employee_name.
